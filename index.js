@@ -11,13 +11,11 @@ class Concesionario {
 
            
             if(unVehiculo.Puertas != undefined){
-                let puertas = unVehiculo.Puertas;
-
+                let puertas = unVehiculo.Puertas;            
                 let unAuto = new Auto(marca,modelo,precio,puertas);
                 this.vehiculos.push(unAuto);
             }else{
-                let cilindrada = unVehiculo.Cilindrada;
-                
+                let cilindrada = unVehiculo.Cilindrada;                
                 let unaMoto = new Moto(marca,modelo,precio,cilindrada);
                 this.vehiculos.push(unaMoto);
             }
@@ -32,29 +30,19 @@ class Concesionario {
 }
 
 class Vehiculo{
+   
     marca;
     modelo;
     precio;
-    lstPropiedades = [];
 
     constructor(unaMarca, unModelo, unValor){
         this.marca = unaMarca;
         this.modelo = unModelo;
         this.precio = unValor;
+
     }
 
-    imprimirDetalle(){
-        let mensajeFinal = "";
-        
-        toxtoUnaP = unProp.getTexto();
-        if (mensajeFinal == ""){
-            mensajeFinal += toxtoUnaP;
-        } else {
-            mensajeFinal += " // " + toxtoUnaP;
-        }
-        mensajeFinal += unProp.getTexto();
-        mensajeFinal += " // ";
-    };
+    imprimirDetalle(){};
 }
 
 class Auto extends Vehiculo{
@@ -66,7 +54,11 @@ class Auto extends Vehiculo{
     }
 
     imprimirDetalle(){
-        console.log(this.marca, this.modelo, this.precio, this.puertas);
+        let detalle = "";
+
+        detalle += "Marca: " + this.marca + " //";
+
+        console.log(detalle);
     }
 }
 
@@ -83,14 +75,7 @@ class Moto extends Vehiculo {
     }
 }
 
-class Propiedades {
-    nombre;
-    valor;
 
-    getTexto() {
-        return this.nombre + ": " + this.valor;
-    }
-}
 
 
 
